@@ -1,14 +1,18 @@
 from flask import Flask, render_template
-from models import *
-app = Flask(__name__)
-
-import config
+from config import Config
+from database import db
 
 
-import api
 
-import routes
+
 
 
 if __name__ == '__main__':
+    
+    app = Flask(__name__)
+    app.config.from_object(Config)
+    db.init_app(app) 
     app.run(debug=True)
+
+
+from routes import *

@@ -1,11 +1,4 @@
-from flask_sqlalchemy import SQLAlchemy
-from werkzeug.security import generate_password_hash, check_password_hash
-from app import app
-from config import Config
-db = SQLAlchemy()
-
-app.config.from_object(Config)
-db.init_app(app)
+from database import db 
 
 class User(db.Model):
     """User model"""
