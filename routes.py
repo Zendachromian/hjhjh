@@ -7,7 +7,18 @@ from functools import wraps
 from datetime import datetime
 
 
-# Define the routes
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+
+
+# 
+('''Define the routes
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -19,3 +30,5 @@ def login():
 @app.route('/register')
 def register():
     return render_template('register.html')
+
+''')
